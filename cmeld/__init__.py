@@ -42,8 +42,21 @@ def remove_trailing_empty_lines(lines: list[str]):
     return lines
 
 
-class Meld:
+class CMeld:
+    """
+    Meld C/C++ files.
+
+    Amalgamate your C/C++ files to ease its usage by
+    other projects.
+
+    Examples:
+
+        cmeld headers *.h > project.h
+        cmeld sources *.c > project.c
+    """
+
     def headers(self, *files):
+        """Header files to meld."""
         filepaths = list(sorted(list(set([str(f) for f in files]))))
         print_header(filepaths)
 
@@ -61,6 +74,7 @@ class Meld:
                     print()
 
     def sources(self, header: str, *files):
+        """Source files to meld."""
         filepaths = list(sorted(list(set([str(f) for f in files]))))
         print_header(filepaths)
 
@@ -81,4 +95,4 @@ class Meld:
 
 
 def main():
-    fire.Fire(Meld)
+    fire.Fire(CMeld())
