@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "cmeld"
+version = "0.1.0"
+description = "Meld C files"
+authors = ["Danilo Horta <danilo.horta@pm.me>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fire = "^0.4.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+isort = "*"
+pytest = "*"
+pyright = "*"
+
+[tool.poetry.scripts]
+cmeld = "cmeld:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.8"]
+build-backend = "poetry.core.masonry.api"
